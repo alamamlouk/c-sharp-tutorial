@@ -19,5 +19,9 @@ namespace c__tutorial
             this.Description = Description;
             this.Price = Price;
         }
+        public Product()
+        {
+            
+        }
     }
 }
