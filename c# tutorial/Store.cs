@@ -25,11 +25,9 @@ namespace c__tutorial
 
         public void displayProducts()
         {
-            const int nameWidth = 20;
-            const int priceWidth = 10;
-            const int descWidth = 30;
+            const int column_width= 30;
 
-            string header = $"| {"Product Name".PadRight(nameWidth)} | {"Price".PadRight(priceWidth)} | {"Description".PadRight(descWidth)} |";
+            string header = $"| {"Product Name".PadRight(column_width)} | {"Price".PadRight(column_width)} | {"Description".PadRight(column_width)} |";
             string separator = new string('-', header.Length);
 
             Console.WriteLine(separator);
@@ -38,7 +36,7 @@ namespace c__tutorial
 
             foreach (Product product in products)
             {
-                string line = $"| {product.Name.PadRight(nameWidth)} | {product.Price.ToString().PadRight(priceWidth)} | {product.Description.PadRight(descWidth)} |";
+                string line = $"| {product.Name.PadRight(column_width)} | {product.Price.ToString().PadRight(column_width)} | {product.Description.PadRight(column_width)} |";
                 Console.WriteLine(line);
             }
 
