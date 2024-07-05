@@ -1,56 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace c__tutorial
 {
-    internal class Store : IStore
+    public  class Store : IStore
 
     {
-        public int id {  get; set; }
+        public int id { get; set; }
         public string name { get; set; }
-        public string owner {  get; set; }
-        public List<Product> products { get; set; }
+        public string owner { get; set; }
+        public IDictionary<int, Product> products { get; set; }
         public Store()
         {
-            products = new List<Product>();
+            products = new Dictionary<int, Product>();
         }
 
         public void addProduct(Product product)
         {
-            products.Add(product);
+            products.Add(product.Id, product);
         }
-
-        public void displayProducts()
+        public void updateProduct(Product product)
         {
-            const int column_width= 30;
-
-            string header = $"| {"Product Name".PadRight(column_width)} | {"Price".PadRight(column_width)} | {"Description".PadRight(column_width)} |";
-            string separator = new string('-', header.Length);
-
-            Console.WriteLine(separator);
-            Console.WriteLine(header);
-            Console.WriteLine(separator);
-
-            foreach (Product product in products)
-            {
-                string line = $"| {product.Name.PadRight(column_width)} | {product.Price.ToString().PadRight(column_width)} | {product.Description.PadRight(column_width)} |";
-                Console.WriteLine(line);
-            }
-
-            Console.WriteLine(separator);
-        }
-
-        public void removeProduct(Product product)
-        {
-            products.Remove(product);
-        }
-
-        public Product updateProduct(Product product)
-        {
-            throw new NotImplementedException();
+            Console.WriteLine("Update Product");
         }
 
         public void addProductWithConsole()
@@ -61,7 +33,7 @@ namespace c__tutorial
             {
                 Console.WriteLine("Enter product Id :");
                 product_id = int.Parse(Console.ReadLine());
-                idExists = productExist(product_id);
+                idExists = findProductById(product_id);
 
                 if (idExists)
                 {
@@ -69,7 +41,6 @@ namespace c__tutorial
                 }
             }
             while (idExists);
-
             Console.WriteLine("Enter Name :");
             string product_name = Console.ReadLine();
             Console.WriteLine("Enter Price   :");
@@ -77,17 +48,27 @@ namespace c__tutorial
             Console.WriteLine("Enter description Id :");
             string product_desc = Console.ReadLine();
             Product product = new Product(product_id, product_name, product_desc, product_price);
-            products.Add(product);
+            products.Add(product_id, product);
         }
 
-        public void removeProductById(int id)
+
+        public void removeProduct(int product_id)
         {
-            throw new NotImplementedException();
+            if (findProductById(id))
+            {
+                products.Remove(products.First(p => p.Key == product_id));
+            }
         }
 
-        public bool productExist(int productId)
+        public bool findProductById(int product_id)
         {
-            return products.Any(p => p.Id == productId);
+            return products.Any(p => p.Key == product_id);
         }
+
+
+
+
+
+
     }
 }

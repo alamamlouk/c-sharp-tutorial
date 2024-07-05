@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace c__tutorial
 {
-    internal class Product  
+    public class Product  
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -21,7 +21,7 @@ namespace c__tutorial
         }
         public Product()
         {
-            
+               
         }
     }
 }

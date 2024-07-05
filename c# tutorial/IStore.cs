@@ -10,10 +10,9 @@ namespace c__tutorial
     {
         void addProduct(Product product);
         void addProductWithConsole();
-        void removeProduct(Product product);
-        void removeProductById(int id);
-        Product updateProduct(Product product);
-        void displayProducts();
-        bool productExist(int productId);
+
+        void removeProduct(int id);
+        void updateProduct(Product product);
+        bool findProductById(int productId);
     }
 }
