@@ -8,7 +8,9 @@ namespace c__tutorial
         {
 
             StoreProgram storeProgram = new StoreProgram();
+            // run the store program
             storeProgram.Run();
+            // TODO : Learn how to manipulate 2D , 3D arrays
 
         }
     }
