@@ -120,11 +120,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data base\DataBaseServices.cs" />
     <Compile Include="Category.cs" />
+    <Compile Include="Data base\DataBase.cs" />
+    <Compile Include="Services\ClientServices.cs" />
+    <Compile Include="Services\EmployeeServices.cs" />
+    <Compile Include="Services\ProductServices.cs" />
+    <Compile Include="Services\UserServices.cs" />
+    <Compile Include="StoreProgramWithSQLite.cs" />
     <Compile Include="Users\Customer.cs" />
     <Compile Include="Store\IStore.cs" />
     <Compile Include="Users\Employee.cs" />
-    <Compile Include="Users\Person.cs" />
+    <Compile Include="Users\User.cs" />
     <Compile Include="Store\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

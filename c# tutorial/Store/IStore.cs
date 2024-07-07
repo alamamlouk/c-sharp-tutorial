@@ -10,7 +10,6 @@ namespace c__tutorial
     {
         void AddProduct(Product product);
         void AddProductWithConsole();
-
         void RemoveProduct(int id);
         void UpdateProduct(Product product);
         bool FindProductById(int productId);

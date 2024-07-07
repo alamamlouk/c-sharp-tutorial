@@ -8,16 +8,16 @@ namespace c__tutorial
 {
     public class Product  
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public float Price { get; set; }
+        public int ProductId { get; set; }
+        public string ProductName { get; set; }
+        public string ProductDescription { get; set; }
+        public float ProductPrice { get; set; }
         public Product(int id, string Name, string Description,float Price)
         {
-            this.Id = id;
-            this.Name = Name;
-            this.Description = Description;
-            this.Price = Price;
+            this.ProductId = id;
+            this.ProductName = Name;
+            this.ProductDescription = Description;
+            this.ProductPrice = Price;
         }
         public Product()
         {

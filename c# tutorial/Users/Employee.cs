@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 // the employee class that extend from person class
 namespace c__tutorial.Users
 {
-    public class Employee:Person
+    public class Employee:User
     {
         public Position Position { get; set; }
         public float Salary { get; set; }

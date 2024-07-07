@@ -1,4 +1,6 @@
-﻿using c__tutorial.Users;
+﻿using c__tutorial.Data_base;
+using c__tutorial.Services;
+using c__tutorial.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +14,14 @@ namespace c__tutorial
     {
         public void Run()
         {
-            // create a store object
-            Store store = new Store(1,"Play Teck");
+
+
+            // create a store object    
+            Store store = new Store(1, "Play Teck");
             // create an owner object
-            Employee owner = new Employee(1, "Ala", "Tunis" ,"ala@gmail.com", "123456789", Position.Owner, 10000);
+            Employee owner = new Employee(1, "Ala", "Tunis", "ala@gmail.com", "123456789", Position.Owner, 10000);
             // set the owner of the store
             store.Owner = owner;
-
 
             Product product = new Product(1, "Lenovo IPad 570", "I5 Gen10 8Go RAM ", 2500.0f);
 
@@ -75,7 +78,7 @@ namespace c__tutorial
                         Console.WriteLine("Enter the id of the product you want to update");
                         int id2 = int.Parse(Console.ReadLine());
                         Product product5 = new Product();
-                        product5.Id = id2;
+                        product5.ProductId = id2;
                         store.UpdateProduct(product5);
                         break;
                     case 5:

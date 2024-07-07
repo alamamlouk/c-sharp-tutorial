@@ -44,7 +44,7 @@ namespace c__tutorial
         // Add product to the store by passing the product object
         public void AddProduct(Product product)
         {
-            Store_products.Add(product.Id, product);
+            Store_products.Add(product.ProductId, product);
         }
         // TODO
         public void UpdateProduct(Product product)

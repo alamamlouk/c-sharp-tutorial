@@ -12,7 +12,7 @@ namespace c__tutorial
         public static void DisplayProducts(IDictionary<int,Product> products)
         {
             // get the max length of the product name, price and description
-            int columnWidth = products.Max(p => Math.Max(p.Value.Name.Length, Math.Max(p.Value.Price.ToString().Length, p.Value.Description.Length))) + 5; // Example of dynamic column width calculation
+            int columnWidth = products.Max(p => Math.Max(p.Value.ProductName.Length, Math.Max(p.Value.ProductPrice.ToString().Length, p.Value.ProductDescription.Length))) + 5; // Example of dynamic column width calculation
             // create the header of the table
             string header = $"| {"Product Name".PadRight(columnWidth)} | {"Price".PadRight(columnWidth)} | {"Description".PadRight(columnWidth)} |";
             // create the separator of the table
@@ -25,7 +25,7 @@ namespace c__tutorial
             foreach (Product product in products.Values)
             {
                 // create the line of the table
-                string line = $"| {product.Name?.PadRight(columnWidth) ?? "N/A"} | {product.Price.ToString().PadRight(columnWidth)} | {product.Description?.PadRight(columnWidth) ?? "N/A"} |";
+                string line = $"| {product.ProductName?.PadRight(columnWidth) ?? "N/A"} | {product.ProductPrice.ToString().PadRight(columnWidth)} | {product.ProductDescription?.PadRight(columnWidth) ?? "N/A"} |";
                 Console.WriteLine(line);
             }
 

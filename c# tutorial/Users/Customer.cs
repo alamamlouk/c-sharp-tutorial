@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 // the Customer class that extend  from the person class
 namespace c__tutorial
 {
-    public class Customer : Person
+    public class Customer : User
     {
         public string CreditCard { get; set; }
         public IList<Product> ProductBought { get; set; }
