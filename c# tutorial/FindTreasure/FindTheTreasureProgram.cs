@@ -18,15 +18,14 @@ namespace c__tutorial
                 case 1:
                     OneDimensionArray oneD = new OneDimensionArray(5);
                     oneD.InitializeMap();
-                    int[] treasures = oneD.hideTheTreasure(2);
-                    oneD.FindTheTreasure(treasures);
+                    oneD.FindTheTreasure(oneD.HideTheTreasure<int[]>(2));
                     break;
-                /*case 2:
-                    TwoDimensionalArray();
+                case 2:
+                    TwoDimensionArray twoDimensionArray = new TwoDimensionArray(5);
+                    twoDimensionArray.InitializeMap();
+                    twoDimensionArray.FindTheTreasure(twoDimensionArray.HideTheTreasure<int[,]>(2));
                     break;
-                case 3:
-                    JaggedArray();
-                    break;*/
+              
                 default:
                     Console.WriteLine("Invalid choice");
                     break;

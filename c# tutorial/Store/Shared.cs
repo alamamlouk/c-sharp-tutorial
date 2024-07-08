@@ -38,7 +38,7 @@ namespace c__tutorial
             Console.WriteLine("1- Display products");
             Console.WriteLine("2- Add product");
             Console.WriteLine("3- Remove product");
-            Console.WriteLine("4- Update product");
+            Console.WriteLine("4- Export Product");
             Console.WriteLine("5- Exit");
         }
     }

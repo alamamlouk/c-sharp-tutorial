@@ -16,6 +16,7 @@ namespace c__tutorial
             Console.WriteLine("Welcome to the store program");
             Console.WriteLine("1- Login");
             Console.WriteLine("2- SignUp");
+            Console.WriteLine("3- Display users");
             Console.Write("Your Choice: ");
             int choice = int.Parse(Console.ReadLine());
             UserServices userServices = new UserServices();
@@ -27,6 +28,9 @@ namespace c__tutorial
                 case 2:
 
                     SignUp(userServices);
+                    break;
+                case 3 :   
+                    DisplayUsers(userServices);
                     break;
                 default:
                     Console.WriteLine("Invalid choice");
@@ -40,9 +44,7 @@ namespace c__tutorial
             try
             {
                 databaseService.CreateUsersTable();
-                databaseService.CreateProductsTable();
-                databaseService.CreateProductBoughtTable();
-                Console.WriteLine("Tables created successfully.");
+                
             }
             catch (Exception e)
             {
@@ -85,11 +87,16 @@ namespace c__tutorial
         }
         public void Login(UserServices userServices)
         {
-            /*          Console.Write("Enter your email: ");
-         s             string email = Console.ReadLine();
-                      Console.Write("Enter your password: ");
-                      string password = Console.ReadLine();
-                      userServices.Login(email, password);*/
+            Console.Write("Enter your email: ");
+            string email = Console.ReadLine();
+            Console.Write("Enter your password: ");
+            string password = Console.ReadLine();
+            userServices.Login(email, password);
+        }
+        public void DisplayUsers(UserServices userServices)
+        {
+
+           userServices.ReadUser();
         }
     }
 }

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace c__tutorial.Services
+namespace c__tutorial.FindTreasure
 {
-    public class ClientServices
+    public class ArrayDetails
     {
+        public  int ArraySize { get; set; }
     }
 }

@@ -23,5 +23,9 @@ namespace c__tutorial
         {
                
         }
+        public string toString()
+        {
+            return $"Product ID : {ProductId} \n Product Name : {ProductName} \n Product Description : {ProductDescription} \n Product Price : {ProductPrice}";
+        }
     }
 }

@@ -79,11 +79,7 @@ namespace c__tutorial
                         break;
                     case 4:
                         // TODO
-                        Console.WriteLine("Enter the id of the product you want to update");
-                        int id2 = int.Parse(Console.ReadLine());
-                        Product product5 = new Product();
-                        product5.ProductId = id2;
-                        store.UpdateProduct(product5);
+                        store.ExportProducts();
                         break;
                     case 5:
                         // exit the program

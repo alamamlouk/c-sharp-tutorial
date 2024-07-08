@@ -6,6 +6,7 @@ namespace c__tutorial.Data_base
 {
     public sealed class DataBase
     {
+
         private static readonly DataBase instance = null;
         private SQLiteConnection SQLite_conn;
         private static readonly object lockObject = new object();

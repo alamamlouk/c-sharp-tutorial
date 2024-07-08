@@ -32,43 +32,7 @@ namespace c__tutorial.Data_base
             DataBase.Instance.Close();
 
         }
-        public void CreateProductsTable()
-        {
-            SQLiteConnection connection = DataBase.Instance.Connection;
 
-            string createProductsTableQuery = @"
-                CREATE TABLE IF NOT EXISTS Products (
-                    ProductId INTEGER PRIMARY KEY AUTOINCREMENT,
-                    ProductName TEXT NOT NULL,
-                    ProductDescription TEXT NOT NULL,
-                    ProductPrice REAL NOT NULL
-                );";
-            using (var command = new SQLiteCommand(createProductsTableQuery, connection))
-            {
-                command.ExecuteNonQuery();
-            }
-
-            DataBase.Instance.Close();
-        }
-        public void CreateProductBoughtTable()
-        {
-            SQLiteConnection connection = DataBase.Instance.Connection;
-
-            string createProductsBoughtTableQuery = @"
-                CREATE TABLE IF NOT EXISTS ProductsBought (
-                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    UserId INTEGER NOT NULL,
-                    ProductID INTEGER NOT NULL,
-                    FOREIGN KEY (ProductId) REFERENCES Products(Id),
-                    FOREIGN KEY (UserId) REFERENCES Users(UsersId)
-                );";
-            using (var command = new SQLiteCommand(createProductsBoughtTableQuery, connection))
-            {
-                command.ExecuteNonQuery();
-            }
-
-            DataBase.Instance.Close();
-        }
         public void DropTable(string tableName)
         {
             SQLiteConnection connection = DataBase.Instance.Connection;

@@ -1,18 +1,19 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Linq;
 
 namespace c__tutorial.FindTreasure
 {
-    public class OneDimensionArray
+    public class OneDimensionArray : ArrayDetails, IMap
     {
-        private int ArraySize { get; set; }
-        private char[] Map { get; set; }
-        public OneDimensionArray(int size)
+        
+        public char[] Map { get; set; }
+        public OneDimensionArray(int ArraySize)
         {
-            this.ArraySize = size;
-            this.Map = new char[size];
+            this.ArraySize = ArraySize;
+            Map = new char[ArraySize];
         }
-        public int[] hideTheTreasure(int numberOfTreasure)
+        public T HideTheTreasure<T>(int numberOfTreasure)
         {
             int[] treasures = new int[numberOfTreasure];
             Random random = new Random();
@@ -28,26 +29,28 @@ namespace c__tutorial.FindTreasure
 
             }
 
-            return treasures;
+            return (T)(object)treasures;
         }
-        public void FindTheTreasure(int[] HiddenTreasures)
+        public void FindTheTreasure<T>(T HiddenTreasures)
         {
-            DisplayMap(Map);
-            int NoMoreTreasure = HiddenTreasures.Length;
-
+            DisplayMap();
+            int[] treasures = (int[])(object)HiddenTreasures;
+            int NoMoreTreasure = treasures.Length;
             do
             {
 
                 Console.WriteLine("Enter the index to find the treasure");
                 int index = int.Parse(Console.ReadLine());
-                if (HiddenTreasures.Contains(index))
+                int foundIndex = Array.IndexOf(treasures, index);
+
+                if (foundIndex != -1)
                 {
                     Map[index] = 'X';
                     Console.WriteLine("You found the treasure");
-                    HiddenTreasures = HiddenTreasures.Where(val => val != index).ToArray();
+                    HiddenTreasures = (T)(object)treasures.Where((val, idx) => idx != foundIndex).ToArray();
                     NoMoreTreasure--;
                     Console.WriteLine("You have " + NoMoreTreasure + " more treasure to find");
-                    DisplayMap(Map);
+                    DisplayMap();
 
                 }
                 else
@@ -63,13 +66,15 @@ namespace c__tutorial.FindTreasure
                 Map[i] = 'O';
             }
         }
-        public void DisplayMap(char[] TheMap)
-        {
-            for (int i = 0; i < TheMap.Length; i++)
-            {
-                Console.Write("[" + TheMap[i] + "],");
-            }
 
+        public void DisplayMap()
+        {
+            for (int i = 0; i < Map.Length; i++)
+            {
+                Console.Write("[" + Map[i] + "],");
+            }
         }
+
+       
     }
 }

@@ -90,6 +90,7 @@
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.SQLite, Version=1.0.118.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\lib\net46\System.Data.SQLite.dll</HintPath>
     </Reference>
@@ -120,16 +121,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FindTreasure\ArrayDetails.cs" />
     <Compile Include="FindTreasure\FindTheTreasureProgram.cs" />
     <Compile Include="Data base\DataBaseServices.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Data base\DataBase.cs" />
+    <Compile Include="FindTreasure\IMap.cs" />
     <Compile Include="FindTreasure\OneDimensionArray.cs" />
-    <Compile Include="Services\ClientServices.cs" />
-    <Compile Include="Services\EmployeeServices.cs" />
-    <Compile Include="Services\ProductServices.cs" />
+    <Compile Include="FindTreasure\TwoDimensionArray.cs" />
     <Compile Include="Services\UserServices.cs" />
     <Compile Include="StoreProgramWithSQLite.cs" />
+    <Compile Include="Store\StoreMethods.cs" />
     <Compile Include="Users\Customer.cs" />
     <Compile Include="Store\IStore.cs" />
     <Compile Include="Users\Employee.cs" />
@@ -138,7 +140,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Store\Shared.cs" />
-    <Compile Include="Store\Store.cs" />
+    <Compile Include="Store\StoreProp.cs" />
     <Compile Include="StoreProgram.cs" />
     <Compile Include="Users\Position.cs" />
   </ItemGroup>

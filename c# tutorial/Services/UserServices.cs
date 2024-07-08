@@ -13,11 +13,26 @@ namespace c__tutorial.Services
     {
         SQLiteConnection connection = DataBase.Instance.Connection;
 
-        public void Login()
+        public void Login(string UserEmail,string UserPhoneNumber)
         {
-
-                
-
+            
+            string loginQuery = "SELECT * FROM Users WHERE UserEmail = @UserEmail AND UserPhoneNumber = @UserPhoneNumber";
+            using (SQLiteCommand command = new SQLiteCommand(loginQuery, connection))
+            {
+                command.Parameters.AddWithValue("@UserEmail", UserEmail);
+                command.Parameters.AddWithValue("@UserPhoneNumber", UserPhoneNumber);
+                using (SQLiteDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        Console.WriteLine("Login successful");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Login failed");
+                    }
+                }
+            }
         }
         public void Registration(string UserName, string UserAddress, string UserEmail, string UserPhoneNumber, string CreditCard = null, string position = null, float salary = 0f)
         {
