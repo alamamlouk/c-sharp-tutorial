@@ -32,9 +32,13 @@ namespace c__tutorial
             Product product4 = new Product(4, "Hp omen desktop", "I7 Gen 12 16GO ", 70000.0f);
 
             store.AddProduct(product);
+
             store.AddProduct(product2);
+
             store.AddProduct(product3);
+
             store.AddProduct(product4);
+
             // the exit variable to exit the program
             bool exit = false;
             Console.WriteLine("Welcome to play Tech  sir how can  i help you");

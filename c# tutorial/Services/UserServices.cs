@@ -15,7 +15,9 @@ namespace c__tutorial.Services
 
         public void Login()
         {
-            Console.WriteLine("User logged in");
+
+                
+
         }
         public void Registration(string UserName, string UserAddress, string UserEmail, string UserPhoneNumber, string CreditCard = null, string position = null, float salary = 0f)
         {

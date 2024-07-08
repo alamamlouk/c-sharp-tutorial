@@ -22,7 +22,8 @@ namespace c__tutorial
                     storeProgramWithSQLite.Run();
                     break;
                 case 3:
-                    // TODO : Learn how to manipulate 2D , 3D arrays
+                    FindTheTreasure findTheTreasure = new FindTheTreasure();
+                    findTheTreasure.Run();
                     break;
                 default:
                     Console.WriteLine("Invalid choice");

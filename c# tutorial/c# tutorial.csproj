@@ -120,9 +120,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FindTreasure\FindTheTreasureProgram.cs" />
     <Compile Include="Data base\DataBaseServices.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Data base\DataBase.cs" />
+    <Compile Include="FindTreasure\OneDimensionArray.cs" />
     <Compile Include="Services\ClientServices.cs" />
     <Compile Include="Services\EmployeeServices.cs" />
     <Compile Include="Services\ProductServices.cs" />
