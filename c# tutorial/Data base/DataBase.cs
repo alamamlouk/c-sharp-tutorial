@@ -7,7 +7,7 @@ namespace c__tutorial.Data_base
     public sealed class DataBase
     {
 
-        private static readonly DataBase instance = null;
+        private static  DataBase instance =null;
         private SQLiteConnection SQLite_conn;
         private static readonly object lockObject = new object();
 
@@ -34,8 +34,9 @@ namespace c__tutorial.Data_base
                 lock (lockObject)
                 {
                     if (instance == null)
-                    {
-                        return new DataBase();
+                    {   
+                        instance = new DataBase();
+                       return new DataBase();
                     }
                     return instance;
                 }

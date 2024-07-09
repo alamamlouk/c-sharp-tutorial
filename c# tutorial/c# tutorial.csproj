@@ -130,11 +130,12 @@
     <Compile Include="FindTreasure\OneDimensionArray.cs" />
     <Compile Include="FindTreasure\TwoDimensionArray.cs" />
     <Compile Include="Services\UserServices.cs" />
-    <Compile Include="StoreProgramWithSQLite.cs" />
+    <Compile Include="Login&amp;Signup.cs" />
     <Compile Include="Store\StoreMethods.cs" />
     <Compile Include="Users\Customer.cs" />
     <Compile Include="Store\IStore.cs" />
     <Compile Include="Users\Employee.cs" />
+    <Compile Include="Users\Subscriber.cs" />
     <Compile Include="Users\User.cs" />
     <Compile Include="Store\Product.cs" />
     <Compile Include="Program.cs" />

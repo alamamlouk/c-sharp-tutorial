@@ -20,7 +20,7 @@ namespace c__tutorial.FindTreasure
             {
                 for (int j = 0; j < ArraySize; j++)
                 {
-                    Console.Write(Map[i, j]);
+                    Console.Write("["+Map[i, j]+"]");
                 }
                 Console.WriteLine();
             }
@@ -37,8 +37,8 @@ namespace c__tutorial.FindTreasure
             {
                 do
                 {
-                    index_X = random.Next(0, this.ArraySize);
-                    index_Y = random.Next(0, this.ArraySize);
+                    index_X = random.Next(0, this.ArraySize-1);
+                    index_Y = random.Next(0, this.ArraySize-1);
                 } while (ContainsCoordinates(treasures, index_X, index_Y, i));
                 treasures[i, 0] = index_X;
                 treasures[i, 1] = index_Y;
@@ -62,7 +62,7 @@ namespace c__tutorial.FindTreasure
         public void FindTheTreasure<T>(T HiddenTreasures) {
             DisplayMap();
             int[,] treasures= (int[,])(Object)HiddenTreasures;
-            int NoMoreTreasure = treasures.Length;
+            int NoMoreTreasure = treasures.Length/2;
 
             do
             {
@@ -71,7 +71,7 @@ namespace c__tutorial.FindTreasure
                 int indexX = int.Parse(Console.ReadLine());
                 Console.WriteLine("Enter the Y index to find the treasure:");
                 int indexY = int.Parse(Console.ReadLine());
-
+                bool found = false;
                 for (int i = 0; i < treasures.GetLength(0); i++)
                 {
                     if (treasures[i, 0] == indexX && treasures[i, 1] == indexY)
@@ -83,12 +83,14 @@ namespace c__tutorial.FindTreasure
                         NoMoreTreasure--;
                         Console.WriteLine("You have " + NoMoreTreasure + " more treasure(s) to find.");
                         DisplayMap();
+                        found = true;
                         break;
                     }
-                    else
-                    {
-                        Console.WriteLine("You missed the treasure, try again");
-                    }
+                   
+                }
+                if(!found)
+                {
+                    Console.WriteLine("You missed the treasure, try again");
                 }
             } while (NoMoreTreasure > 0);
         }

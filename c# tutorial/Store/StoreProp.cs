@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-// the store class that implement the IStore interface and initialize the store products
 namespace c__tutorial
 {
     public partial class Store 

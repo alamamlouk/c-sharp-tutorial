@@ -12,6 +12,8 @@ namespace c__tutorial
         public void Run()
         {
             Console.WriteLine("Which type of arrays you want to play in?");
+            Console.WriteLine("1. One Dimension Array");
+            Console.WriteLine("2. Two Dimension Array");
             int choice = int.Parse(Console.ReadLine());
             switch (choice)
             {

@@ -3,6 +3,7 @@ using c__tutorial.Services;
 using c__tutorial.Users;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,8 @@ namespace c__tutorial
             Employee owner = new Employee(1, "Ala", "Tunis", "ala@gmail.com", "123456789", Position.Owner, 10000);
             // set the owner of the store
             store.Owner = owner;
+            Subscriber subscriber = new Subscriber();
+            subscriber.Subscribe(store);
 
             Product product = new Product(1, "Lenovo IPad 570", "I5 Gen10 8Go RAM ", 2500.0f);
 

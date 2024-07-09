@@ -7,6 +7,9 @@ namespace c__tutorial
         static void Main(string[] args)
         {
             Console.Write("Hello Please the select the program you want to run : ");
+            Console.WriteLine("1. Store Program");
+            Console.WriteLine("2. login and sing up SQLite");
+            Console.WriteLine("3. Find the treasure");
             int choice= int.Parse(Console.ReadLine());
 
             switch (choice) {  
@@ -18,8 +21,8 @@ namespace c__tutorial
                     break;
                 case 2:
                   
-                    StoreProgramWithSQLite storeProgramWithSQLite = new StoreProgramWithSQLite();
-                    storeProgramWithSQLite.Run();
+                    LoginAndSignUp loginAndSignUp = new LoginAndSignUp();
+                    loginAndSignUp.Run();
                     break;
                 case 3:
                     FindTheTreasure findTheTreasure = new FindTheTreasure();

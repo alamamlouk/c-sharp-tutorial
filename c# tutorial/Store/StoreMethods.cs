@@ -7,8 +7,17 @@ using System.Threading.Tasks;
 
 namespace c__tutorial
 {
+    public delegate void Notify();
     public partial class Store : IStore
     {
+        public event Notify ProductAdded;
+        
+
+        protected virtual void OnProcessCompleted()
+        {
+            ProductAdded?.Invoke();
+        }
+
         public Store(int Store_id, string Store_name)
         {
             this.Store_products = new Dictionary<int, Product>();
@@ -47,6 +56,8 @@ namespace c__tutorial
             string product_discount = Console.ReadLine();
             Product product = new Product(product_id, product_name, product_discount, product_price);
             Store_products.Add(product_id, product);
+            OnProcessCompleted();
+
         }
 
         // remove a product from the store

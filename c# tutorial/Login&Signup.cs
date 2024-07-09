@@ -1,10 +1,11 @@
 ﻿using c__tutorial.Data_base;
 using c__tutorial.Services;
+using c__tutorial.Users;
 using System;
 
 namespace c__tutorial
 {
-    public class StoreProgramWithSQLite
+    public class LoginAndSignUp
     {
 
         public void Run()
@@ -73,6 +74,12 @@ namespace c__tutorial
             if (choice2 == 1)
             {
                 Console.WriteLine("Enter your position: ");
+                Console.WriteLine("1- "+Position.Owner);
+                Console.WriteLine("2- "+Position.AssistantManager);
+                Console.WriteLine("3- "+Position.Supervisor);
+                Console.WriteLine("4- "+Position.Clerk);
+                Console.WriteLine("5- "+Position.Manager);
+
                 string position = Console.ReadLine();
                 Console.WriteLine("Enter your salary: ");
                 float salary = float.Parse(Console.ReadLine());
@@ -89,7 +96,7 @@ namespace c__tutorial
         {
             Console.Write("Enter your email: ");
             string email = Console.ReadLine();
-            Console.Write("Enter your password: ");
+            Console.Write("Enter your phone: ");
             string password = Console.ReadLine();
             userServices.Login(email, password);
         }
