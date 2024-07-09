@@ -10,10 +10,10 @@ namespace c__tutorial.Users
     {
         public void Subscribe(Store process)
         {
-            process.ProductAdded += OnProcessCompleted;
+            process.ProductAdded += OnAddingAProduct;
         }
 
-        private void OnProcessCompleted()
+        private void OnAddingAProduct()
         {
             Console.WriteLine("Subcribers: Product added");
         }

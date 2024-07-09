@@ -13,7 +13,7 @@ namespace c__tutorial
         public event Notify ProductAdded;
         
 
-        protected virtual void OnProcessCompleted()
+        protected virtual void OnProductAdded()
         {
             ProductAdded?.Invoke();
         }
@@ -56,7 +56,7 @@ namespace c__tutorial
             string product_discount = Console.ReadLine();
             Product product = new Product(product_id, product_name, product_discount, product_price);
             Store_products.Add(product_id, product);
-            OnProcessCompleted();
+            OnProductAdded();
 
         }
 
